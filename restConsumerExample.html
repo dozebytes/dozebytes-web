@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="teste">
+<head>
+    <meta charset="UTF-8">
+    <title>REST Consumer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script>
+        angular.module("teste", [])
+        .controller("Hello", function ($scope, $http) {
+            $http.get("http://dozebytes.com.br:8080/greeting").
+                then(function (response) {
+                    $scope.greeting = response.data;
+                });
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="Hello">
+        <p>The ID is {{greeting.id}}</p>
+        <p>The content is {{greeting.content}}</p>
+    </div>
+</body>
+</html>

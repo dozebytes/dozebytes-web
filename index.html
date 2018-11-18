@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="dozebytes-web">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script>
+        angular.module("dozebytes-web", []);
+        angular.module("dozebytes-web").controller("dozebytesCtrl", function ($scope) {
+            $scope.message = "Hello World";
+        });
+    </script>
+</head>
+<body>
+    <div ng-controller="dozebytesCtrl">
+        {{message}}
+    </div>
+</body>
+</html>
